@@ -1,7 +1,20 @@
 {%extends 'base.html'%}
 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inicio de sesion</title>	
+	<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+</head>
+<body>
 {%block content%}
 {%if form.errors%}
+<nav class="nav">
 <p>Tu usuario y contrasea no coinciden</p>
 {%else%}
 <form action="{%url 'login'%}" method="post">
@@ -10,8 +23,11 @@
 	<input type="hidden" name="next" value="{{next}}"/>
 	<input type="submit" value="Iniciar Sesión">
 </form>
+</nav>
 <p>Si aun no tienes una cuenta, creala <a href="{%url 'alta'%}">Aquí</a></p>
 {%endif%}
 
-
 {%endblock content%}
+</body>
+</html>
+
