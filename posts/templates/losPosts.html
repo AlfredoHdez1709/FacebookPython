@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%block content%}
+	<h1>Posts</h1>
+
+	{%for post in posts%}
+		<a href="{{post.get_absolute_url}}">
+			<h3>{{post.titulo}}</h3>
+		</a>
+		<p>{{post.cuerpo | truncatewords:20}}</p>
+		<span>{{post.fecha}}</span>
+	{%empty%}
+		<h1>No hay posts Brayan!</h1>
+	{%endfor%}
+
+
+{%endblock content%}
